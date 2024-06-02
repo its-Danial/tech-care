@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 import { DiagnosisHistory } from "@/lib/types";
 import Image from "next/image";
-import clsx from "clsx";
+import LevelOverview from "@/components/ui/card/LevelOverview";
 
 type BPChartProps = {
   diagnosisHistory: DiagnosisHistory[];
@@ -64,7 +64,8 @@ export default function BPChart({ diagnosisHistory }: BPChartProps) {
       options: {
         scales: {
           y: {
-            beginAtZero: true,
+            beginAtZero: false,
+            min: 60,
             grid: {
               color: "#CBC8D4",
             },
@@ -99,7 +100,7 @@ export default function BPChart({ diagnosisHistory }: BPChartProps) {
   }, [diagnosisHistory]);
 
   return (
-    <div className="container flex space-x-8">
+    <div className="flex h-[298px] max-w-[726px] space-x-8 rounded-xl bg-[#f4f0fe] p-4">
       <div className="flex-1">
         <div className="flex items-start justify-between pr-8">
           <h1 className="inner-card-title-18pt mb-5">Blood Pressure</h1>
@@ -116,81 +117,11 @@ export default function BPChart({ diagnosisHistory }: BPChartProps) {
         <canvas ref={chartRef} />
       </div>
 
-      <div className="h-[201px] w-[208px]">
+      <div className="h-[201px] w-[188px]">
         <LevelOverview label="Systolic" level="Higher" value={160} />
         <div className="my-4 h-px w-full bg-[--unnamed-color-cbc8d4]" />
         <LevelOverview label="Diastolic" level="Lower" value={78} />
       </div>
-      <style jsx>{`
-        .container {
-          padding: 16px;
-          max-width: 726px;
-          height: 298px;
-          background: #f4f0fe 0% 0% no-repeat padding-box;
-          border-radius: 12px;
-        }
-      `}</style>
-    </div>
-  );
-}
-
-type LevelOverview = {
-  level: string;
-  label: string;
-  value: number;
-};
-
-function LevelOverview({ label, level, value }: LevelOverview) {
-  return (
-    <div className="flex flex-col space-y-2">
-      <div className="flex items-center space-x-1">
-        <span
-          className={clsx(
-            "h-[14px] w-[14px] rounded-full border border-solid border-[--unnamed-color-ffffff]",
-            label === "Systolic" ? "bg-[#E66FD2]" : "bg-[#8C6FE6]",
-          )}
-        />
-        <h3 className="overview-header">{label}</h3>
-      </div>
-      <span className="overview-num">{value}</span>
-      <div className="flex space-x-2">
-        <Image
-          src={`/assets/icons/${label === "Systolic" ? "ArrowUp" : "ArrowDown"}.svg`}
-          alt="arrow up"
-          height="5"
-          width="10"
-        />
-        <span className="overview-levels">{level} than Average</span>
-      </div>
-      <style jsx>{`
-        .overview-header {
-          font: var(--unnamed-font-style-normal) normal
-            var(--unnamed-font-weight-bold) var(--unnamed-font-size-14) /
-            var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
-          letter-spacing: var(--unnamed-character-spacing-0);
-          color: var(--unnamed-color-072635);
-          text-align: left;
-          text-transform: capitalize;
-        }
-        .overview-num {
-          font: var(--unnamed-font-style-normal) normal
-            var(--unnamed-font-weight-bold) 22px/30px
-            var(--unnamed-font-family-manrope);
-          letter-spacing: var(--unnamed-character-spacing-0);
-          color: var(--unnamed-color-072635);
-          text-align: left;
-          text-transform: capitalize;
-          opacity: 1;
-        }
-        .overview-levels {
-          font: var(--unnamed-font-style-normal) normal
-            var(--unnamed-font-weight-normal) var(--unnamed-font-size-14) /
-            var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
-          letter-spacing: var(--unnamed-character-spacing-0);
-          color: var(--unnamed-color-072635);
-          text-align: left;
-        }
-      `}</style>
     </div>
   );
 }
