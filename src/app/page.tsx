@@ -1,7 +1,7 @@
 import DiagnosisHistory from "@/components/section/DiagnosisHistory";
 import Patients from "@/components/section/Patients";
 import $fetch from "@/lib/fetch";
-import { Patient } from "@/lib/types";
+import { Patient, DiagnosisHistory as TypeDiagnosisHistory } from "@/lib/types";
 
 export default async function Home() {
   const data: Patient[] = await (
@@ -19,7 +19,9 @@ export default async function Home() {
       <Patients patients={data} className="mt-[18px]" />
       <DiagnosisHistory
         className="col-span-2 mt-[18px]"
-        patient={jessicaTaylor as Patient}
+        patientHistory={
+          jessicaTaylor?.diagnosis_history as TypeDiagnosisHistory[]
+        }
       />
     </main>
   );

@@ -1,24 +1,20 @@
 import Card from "@/components/ui/card/Card";
-import { Patient } from "@/lib/types";
-import BPChart from "./BPChart";
 import DiagnosisHistoryCard from "@/components/ui/card/DiagnosisHistoryCard";
+import { DiagnosisHistory as TypeDiagnosisHistory } from "@/lib/types";
+import BPChart from "./BPChart";
 
 type DiagnosisHistoryProps = {
   className?: string;
-  patient: Patient;
+  patientHistory: TypeDiagnosisHistory[];
 };
 
 export default function DiagnosisHistory({
   className,
-  patient,
+  patientHistory,
 }: DiagnosisHistoryProps) {
-  const staticHistory = patient.diagnosis_history[0];
-
-  const respiratory = staticHistory.respiratory_rate;
-
-  const temperature = staticHistory.temperature;
-
-  const heartRate = staticHistory.heart_rate;
+  const respiratory = patientHistory[0].respiratory_rate;
+  const temperature = patientHistory[0].temperature;
+  const heartRate = patientHistory[0].heart_rate;
 
   return (
     <Card className={className}>
@@ -26,7 +22,7 @@ export default function DiagnosisHistory({
         <header className="mb-10">
           <h1 className="card-title-24pt">Diagnosis History</h1>
         </header>
-        <BPChart diagnosisHistory={patient.diagnosis_history} />
+        <BPChart diagnosisHistory={patientHistory} />
         <div className="mt-5 flex space-x-[21px]">
           <DiagnosisHistoryCard
             color="#E0F3FA"
