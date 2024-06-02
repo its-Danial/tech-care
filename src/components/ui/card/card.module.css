@@ -1,0 +1,5 @@
+.card {
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  opacity: 1;
+}
