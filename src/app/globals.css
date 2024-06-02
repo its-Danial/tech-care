@@ -26,7 +26,7 @@
   /* Font/text values */
   --unnamed-font-family-manrope: Manrope;
   --unnamed-font-style-normal: normal;
-  --unnamed-font-weight-800: 800px;
+  --unnamed-font-weight-800: 800;
   --unnamed-font-weight-normal: normal;
   --unnamed-font-weight-bold: bold;
   --unnamed-font-size-14: 14px;
@@ -89,6 +89,7 @@
 
 body {
   padding: 18px;
+  margin: 0 auto;
   max-width: 1600px;
   max-height: 1195px;
   background: #f6f7f8 0% 0% no-repeat padding-box;
