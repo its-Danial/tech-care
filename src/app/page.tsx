@@ -1,9 +1,7 @@
-import Nav from "@/components/nav";
-
 export default function Home() {
   return (
-    <main>
-      <Nav />
+    <main className="mt-8">
+      <div>Content</div>
     </main>
   );
 }
