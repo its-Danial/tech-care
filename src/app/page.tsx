@@ -7,7 +7,9 @@ export default async function Home() {
     await $fetch("https://fedskillstest.coalitiontechnologies.workers.dev")
   ).json();
 
-  console.log(data);
+  const jessicaTaylor = data.find(
+    (patient) => patient.name === "Jessica Taylor",
+  );
 
   return (
     <main className="mt-[18px] grid grid-cols-4 gap-8">

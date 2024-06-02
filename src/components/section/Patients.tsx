@@ -2,7 +2,6 @@ import Card from "@/components/ui/card/Card";
 import { Patient } from "@/lib/types";
 import Image from "next/image";
 import PatientsListItem from "../ui/list/PatientsListItem";
-import clsx from "clsx";
 
 type PatientsProps = {
   className?: string;
