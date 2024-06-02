@@ -96,18 +96,15 @@ body {
   opacity: 1;
 }
 
-/* width */
 .scroll-bar::-webkit-scrollbar {
   width: 6px;
 }
 
-/* Track */
 .scroll-bar::-webkit-scrollbar-track {
   background: #e3e4e6 0% 0% no-repeat padding-box;
   border-radius: 3px;
 }
 
-/* Handle */
 .scroll-bar::-webkit-scrollbar-thumb {
   background: var(--unnamed-color-072635) 0% 0% no-repeat padding-box;
   border-radius: 3px;
