@@ -61,7 +61,7 @@ export default function Nav() {
           alt="senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc"
         />
         <div className="item flex h-full w-full flex-1 justify-between">
-          <div className="flex h-full flex-1 flex-col justify-center text-xs">
+          <div className="flex h-full flex-1 flex-col justify-center">
             <span className="body-emphasized-14pt">Dr. Jose Simmons</span>
             <span className="body-secondary-info-14pt">
               General Practitioner
