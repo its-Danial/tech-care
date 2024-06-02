@@ -1,0 +1,8 @@
+.nav {
+  max-width: 1564px;
+  height: 72px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 70px;
+  opacity: 1;
+}
