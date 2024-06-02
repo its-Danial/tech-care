@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--unnamed-font-family-manrope",
+});
 
 export const metadata: Metadata = {
   title: "Tech Care",
@@ -17,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={manrope.variable}>
         <Nav />
         {children}
       </body>
