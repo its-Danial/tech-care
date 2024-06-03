@@ -1,5 +1,6 @@
 import DiagnosisHistory from "@/components/section/DiagnosisHistory";
 import DiagnosticList from "@/components/section/DiagnosticList";
+import LabResults from "@/components/section/LabResults";
 import Patients from "@/components/section/Patients";
 import UserInfo from "@/components/section/UserInfo";
 import $fetch from "@/lib/fetch";
@@ -37,7 +38,12 @@ export default async function Home() {
           }
         />
       </div>
-      <UserInfo user={useInfo as Patient} />
+      <div className="flex flex-col space-y-8">
+        <UserInfo user={useInfo as Patient} />
+        <LabResults
+          patientLabResults={jessicaTaylor?.lab_results as string[]}
+        />
+      </div>
     </main>
   );
 }
