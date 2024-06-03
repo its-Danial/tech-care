@@ -22,7 +22,7 @@ export default function Patients({ className, patients }: PatientsProps) {
           />
         </header>
 
-        <ul className="scroll-bar flex-grow overflow-y-auto">
+        <ul className="scroll-bar mr-1 flex-grow overflow-y-auto">
           {patients.map((patient) => (
             <PatientsListItem
               key={patient.phone_number}

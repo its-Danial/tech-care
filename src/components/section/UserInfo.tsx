@@ -14,7 +14,7 @@ export default function UserInfo({ user, className }: UserInfoProps) {
 
   return (
     <Card className={className}>
-      <section className="h-[740px] w-[367px] p-5">
+      <section className="h-[740px] max-w-[367px] p-5">
         <Image
           src={user.profile_picture}
           alt={user.name}

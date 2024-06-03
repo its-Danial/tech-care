@@ -18,7 +18,7 @@ export default function DiagnosisHistory({
 
   return (
     <Card className={className}>
-      <section className="p-5">
+      <section className="max-h-[673px] max-w-[766px] p-5">
         <header className="mb-10">
           <h1 className="card-title-24pt">Diagnosis History</h1>
         </header>
