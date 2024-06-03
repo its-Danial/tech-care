@@ -1,7 +1,9 @@
 import DiagnosisHistory from "@/components/section/DiagnosisHistory";
 import DiagnosticList from "@/components/section/DiagnosticList";
 import Patients from "@/components/section/Patients";
+import UserInfo from "@/components/section/UserInfo";
 import $fetch from "@/lib/fetch";
+import { extractUserInfo } from "@/lib/functions";
 import {
   Patient,
   DiagnosisHistory as TypeDiagnosisHistory,
@@ -17,7 +19,7 @@ export default async function Home() {
     (patient) => patient.name === "Jessica Taylor",
   );
 
-  console.log(jessicaTaylor);
+  const useInfo = extractUserInfo(jessicaTaylor as Patient);
 
   return (
     <main className="mt-[18px] grid grid-cols-4 gap-8">
@@ -35,6 +37,7 @@ export default async function Home() {
           }
         />
       </div>
+      <UserInfo user={useInfo as Patient} />
     </main>
   );
 }
