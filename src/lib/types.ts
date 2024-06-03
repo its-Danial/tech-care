@@ -7,9 +7,9 @@ export interface Patient {
   phone_number: string;
   emergency_contact: string;
   insurance_type: string;
-  diagnosis_history: DiagnosisHistory[];
-  diagnostic_list: DiagnosticList[];
-  lab_results: string[];
+  diagnosis_history?: DiagnosisHistory[];
+  diagnostic_list?: DiagnosticList[];
+  lab_results?: string[];
 }
 
 export interface DiagnosisHistory {
