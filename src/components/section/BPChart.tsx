@@ -117,7 +117,7 @@ export default function BPChart({ diagnosisHistory }: BPChartProps) {
         <canvas ref={chartRef} />
       </div>
 
-      <div className="h-[201px] w-[188px]">
+      <div className="h-[201px] w-[208px]">
         <LevelOverview label="Systolic" level="Higher" value={160} />
         <div className="my-4 h-px w-full bg-[--unnamed-color-cbc8d4]" />
         <LevelOverview label="Diastolic" level="Lower" value={78} />
